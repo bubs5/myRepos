@@ -5,6 +5,45 @@
 int extraMemoryAllocated;
 
 // implement merge sort
+void merge(int pData[], int l, int m, int r) {
+    int i, j, k;
+    int n1 = m - l + 1;
+    int n2 = r - m;
+ 
+    int L[n1], R[n2];
+ 
+    for (i = 0; i < n1; i++)
+        L[i] = pData[l + i];
+    for (j = 0; j < n2; j++)
+        R[j] = pData[m + 1 + j];
+ 
+    i = 0;
+    j = 0;
+    k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            pData[k] = L[i];
+            i++;
+        }
+        else {
+            pData[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+ 
+    while (i < n1) {
+        pData[k] = L[i];
+        i++;
+        k++;
+    }
+ 
+    while (j < n2) {
+        pData[k] = R[j];
+        j++;
+        k++;
+    }
+}
 // extraMemoryAllocated counts bytes of extra memory allocated
 void mergeSort(int pData[], int l, int r)
 {

@@ -19,7 +19,7 @@ void bubbleSort(int arr[], int n)
        }
    }
    for (i = 0; i < n; i++)
-      printf("Swaps Needed for index: %d: %d\n", i, swaps[i]);
+      printf("Swaps Needed for index %d: %d\n", i, swaps[i]);
 }
 
 int main()
